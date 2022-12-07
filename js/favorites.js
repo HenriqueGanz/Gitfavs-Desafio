@@ -1,6 +1,7 @@
 import { GithubUser } from "./GithubUsers.js"
 
 //classe que vai conter a logica de dados
+
 export class Favorites {
     constructor(root) {
         this.root = document.querySelector(root)
@@ -18,7 +19,7 @@ export class Favorites {
     async add(username) {
         try {
 
-            const userExists = this.entries.find(entry => entry.login === username)
+            const userExists = this.entries.find(entry => entry.login.toLowerCase() === username.toLowerCase())
 
              if(userExists) {
                throw new Error('Usuário já existe na lista')
